@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game Interaktif SD</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet" />
   <script defer src="script.js"></script>
   <script defer src="nama_pengguna.js"></script>
 </head>
 <body>
-  <!-- Tombol Navigasi Kanan -->
+
+  <!-- Hamburger menu (tampil di mobile) -->
+  <div id="hamburger" class="hamburger">&#9776;</div>
+
+  <!-- Dropdown menu (muncul saat hamburger diklik) -->
+  <div id="dropdown-menu" class="dropdown-menu">
+    <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil" width="30px" />
+    <img src="media/play.png" alt="play" class="btn-play" data-menu="play" width="30px" />
+    <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute" width="30px" />
+    <img src="media/information.png" alt="info" class="btn-information" data-menu="information" width="30px" />
+    <button class="btn-reset-nama">Ganti Nama Pengguna</button>
+  </div>
+
+  <!-- Tombol Navigasi Kanan (untuk tampilan desktop) -->
   <div class="top-right-buttons">
     <button id="reset-nama-btn" class="btn-reset-nama">Ganti Nama Pengguna</button>
-    <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil" width="50px">
-    <img src="media/play.png" alt="play" class="btn-play" data-menu="play" width="45px">
-    <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute" width="50px">
-    <img src="media/information.png" alt="information" class="btn-information" data-menu="information" width="50px">
+    <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil" width="50px" />
+    <img src="media/play.png" alt="play" class="btn-play" data-menu="play" width="45px" />
+    <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute" width="50px" />
+    <img src="media/information.png" alt="information" class="btn-information" data-menu="information" width="50px" />
   </div>
 
   <!-- Container Utama -->
@@ -30,11 +43,11 @@
       <p class="judul-game">Silakan pilih game:</p>
       <div class="menu-horizontal">
         <div class="menu-item">
-          <img src="media/matematika.png" alt="Game Numerasi" class="btn-numerasi" data-menu="numerasi">
+          <img src="media/matematika.png" alt="Game Numerasi" class="btn-numerasi" data-menu="numerasi" />
           <p class="label">Game Numerasi</p>
         </div>
         <div class="menu-item">
-          <img src="media/baca.png" alt="Game Literasi" class="btn-literasi" data-menu="literasi">
+          <img src="media/baca.png" alt="Game Literasi" class="btn-literasi" data-menu="literasi" />
           <p class="label">Game Literasi</p>
         </div>
       </div>
@@ -44,7 +57,7 @@
   <!-- Popup Profil Pembuat -->
   <div id="popup-profil">
     <div class="popup-content">
-      <img src="media/profil.png" alt="Foto Profil">
+      <img src="media/profil.png" alt="Foto Profil" />
       <p> PROFIL PEMBUAT </p>
       <p><strong>Nama:</strong> Hikmatullah, S.Pd</p>
       <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
@@ -62,5 +75,23 @@
       <button id="btn-simpan-nama">Mulai</button>
     </div>
   </div>
+
+  <!-- Script hamburger -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.getElementById("hamburger");
+      const menu = document.getElementById("dropdown-menu");
+
+      hamburger.addEventListener("click", () => {
+        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          menu.style.display = "none";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
