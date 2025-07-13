@@ -303,6 +303,94 @@
   margin-top: 10px;
   transition: background-color 0.3s ease;
 }
+/* ========== TAMPILAN MOBILE ========== */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .judul-utama h1 {
+    font-size: 28px;
+  }
+
+  .judul-utama h2 {
+    font-size: 22px;
+  }
+
+  .judul-game {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .label {
+    font-size: 16px;
+  }
+
+  .menu-horizontal {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .menu-item img {
+    width: 70vw;
+    max-width: 240px;
+  }
+
+  .top-right-buttons {
+    flex-direction: column;
+    top: 10px;
+    right: 10px;
+    gap: 8px;
+  }
+
+  .top-right-buttons img {
+    width: 36px;
+    padding: 4px;
+  }
+
+  .btn-reset-nama {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .popup-content {
+    width: 90%;
+    font-size: 14px;
+    padding: 20px;
+  }
+
+  .popup-content h3 {
+    font-size: 1.4em;
+  }
+
+  .popup-content input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .popup-content button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  #popup-close {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .container {
+    gap: 20px;
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 8px;
+    padding: 6px;
+  }
+}
+
 
 .btn-reset-nama:hover {
   background-color: #e0a800;
