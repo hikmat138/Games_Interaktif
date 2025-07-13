@@ -316,4 +316,116 @@ body {
     transform: translateY(0);
   }
 }
+/* ========================= */
+/* ==== RESPONSIF MOBILE ==== */
+/* ========================= */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .judul {
+    font-size: 22px;
+  }
+
+  .status-bar {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .soal,
+  #nomor-soal {
+    font-size: 20px;
+  }
+
+  #jawaban {
+    font-size: 16px;
+    padding: 8px;
+    width: 90%;
+    max-width: 250px;
+  }
+
+  #kirim-jawaban {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .top-left-buttons,
+  .top-right-buttons {
+    flex-direction: column;
+    gap: 6px;
+    top: 10px;
+  }
+
+  .top-left-buttons img,
+  .top-right-buttons img {
+    width: 32px;
+    padding: 4px;
+  }
+
+  #popup-profil .popup-content {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  #popup-close {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  #nama-pengguna-label {
+    font-size: 14px;
+    top: 70px;
+    left: 10px;
+    padding: 4px 8px;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .huruf {
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+
+  .button-next,
+  .button-success,
+  .button-fail {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .game-container,
+  #level-numerasi-selesai,
+  .akhir-container {
+    padding: 16px;
+  }
+
+  #level-numerasi-selesai h2,
+  .akhir-container h2 {
+    font-size: 20px;
+  }
+
+  #level-numerasi-selesai p,
+  .akhir-container p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-bar {
+    font-size: 14px;
+  }
+
+  #jawaban {
+    font-size: 14px;
+  }
+
+  .judul {
+    font-size: 18px;
+  }
+}
 
