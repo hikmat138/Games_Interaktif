@@ -1,136 +1,272 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Game Interaktif SD</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet" />
-  <script defer src="script.js"></script>
-  <script defer src="nama_pengguna.js"></script>
-</head>
-<body>
+/* RESET & FONT */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<!-- Navigasi Atas (Mobile) -->
-<div class="navbar-mobile">
-  <div class="hamburger-icon" id="hamburger">&#9776;</div>
-  <div class="user-info">
-    <span id="displayNamaPengguna">Nama</span>
-    <button id="reset-nama-btn-mobile" class="btn-ganti-nama">Ganti</button>
-  </div>
-</div>
+body {
+  font-family: 'Chewy', cursive;
+  background: url('media/wood.gif') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-<!-- Dropdown menu mobile -->
-<div class="dropdown-menu" id="dropdown-menu">
-  <div class="menu-item-mobile">
-    <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil">
-    <span>Profil</span>
-  </div>
-  <div class="menu-item-mobile">
-    <img src="media/play.png" alt="play" class="btn-play" data-menu="play">
-    <span>Main</span>
-  </div>
-  <div class="menu-item-mobile">
-    <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute">
-    <span>Mute</span>
-  </div>
-  <div class="menu-item-mobile">
-    <img src="media/information.png" alt="information" class="btn-information" data-menu="information">
-    <span>Info</span>
-  </div>
-</div>
+.container {
+  margin-top: 100px;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-<!-- Navigasi Desktop -->
-<div class="top-right-buttons">
-  <button id="reset-nama-btn" class="btn-reset-nama">Ganti Nama Pengguna</button>
-  <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil" width="50px" />
-  <img src="media/play.png" alt="play" class="btn-play" data-menu="play" width="45px" />
-  <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute" width="50px" />
-  <img src="media/information.png" alt="information" class="btn-information" data-menu="information" width="50px" />
-</div>
+.judul-utama {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-<!-- Container Utama -->
-<div class="container">
-  <div class="judul-utama" style="margin-top: 90px;">
-    <h1>Media Pembelajaran Interaktif</h1>
-    <h2>Kelas 5 Sekolah Dasar</h2>
-  </div>
+.judul-utama h1 {
+  font-size: 48px;
+  color: #fff;
+  text-shadow: 4px 4px 4px #000;
+}
 
-  <div class="menu-wrapper">
-    <p class="judul-game">Silakan pilih game:</p>
-    <div class="menu-horizontal">
-      <div class="menu-item">
-        <img src="media/matematika.png" alt="Game Numerasi" class="btn-numerasi" data-menu="numerasi" />
-        <p class="label">Game Numerasi</p>
-      </div>
-      <div class="menu-item">
-        <img src="media/baca.png" alt="Game Literasi" class="btn-literasi" data-menu="literasi" />
-        <p class="label">Game Literasi</p>
-      </div>
-    </div>
-  </div>
-</div>
+.judul-utama h2 {
+  font-size: 40px;
+  color: #eee;
+  text-shadow: 4px 4px 2px #000;
+  margin-top: 10px;
+}
 
-<!-- Popup Profil Pembuat -->
-<div id="popup-profil">
-  <div class="popup-content">
-    <img src="media/profil.png" alt="Foto Profil" />
-    <p> PROFIL PEMBUAT </p>
-    <p><strong>Nama:</strong> Hikmatullah, S.Pd</p>
-    <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
-    <p><strong>Jabatan:</strong> Guru Kelas</p>
-    <button id="popup-close">Tutup</button>
-  </div>
-</div>
+.judul-game {
+  font-size: 28px;
+  color: #fff;
+  text-shadow: 2px 2px 2px #000;
+  margin-bottom: 15px;
+  text-align: center;
+}
 
-<!-- Popup Input Nama Pengguna -->
-<div id="popup-nama" class="popup-overlay">
-  <div class="popup-content">
-    <h3>Selamat datang!</h3>
-    <p>Silakan masukkan nama kamu:</p>
-    <input type="text" id="input-nama" placeholder="Nama lengkap" autocomplete="off" />
-    <button id="btn-simpan-nama">Mulai</button>
-  </div>
-</div>
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-<!-- Script Hamburger + Nama Pengguna -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.getElementById("hamburger");
-    const menu = document.getElementById("dropdown-menu");
-    const allButtons = menu.querySelectorAll("img, button, .menu-item-mobile");
+.menu-horizontal {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    hamburger.addEventListener("click", () => {
-      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-    });
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    // Tutup menu jika salah satu tombol diklik
-    allButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        menu.style.display = "none";
-      });
-    });
+.menu-item img {
+  width: 80vw;
+  max-width: 300px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s, filter 0.2s;
+}
 
-    // Tutup menu saat resize ke desktop
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        menu.style.display = "none";
-      }
-    });
+.menu-item img:hover {
+  transform: scale(1.05);
+  filter: grayscale(70%) brightness(0.95);
+}
 
-    // Tampilkan nama pengguna
-    const nama = localStorage.getItem("namaPengguna") || "Pengguna";
-    document.getElementById("displayNamaPengguna").innerText = nama;
+.label {
+  margin-top: 10px;
+  font-size: 28px;
+  color: #070000;
+  text-shadow: 1px 1px 2px #ffffff;
+}
 
-    // Reset nama versi mobile
-    document.getElementById("reset-nama-btn-mobile")?.addEventListener("click", () => {
-      if (confirm("Yakin ingin mengganti nama pengguna?")) {
-        localStorage.removeItem("nama_pengguna");
-        location.reload();
-      }
-    });
-  });
-</script>
+/* NAVIGATION DESKTOP */
+.top-right-buttons {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 10000;
+  align-items: center;
+}
 
-</body>
-</html>
+.top-right-buttons img {
+  width: 50px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.btn-reset-nama {
+  background-color: #ffc107;
+  color: #000;
+  font-size: 14px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-reset-nama:hover {
+  background-color: #e0a800;
+}
+
+/* NAVBAR MOBILE */
+.navbar-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 10001;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .hamburger-icon {
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .user-info span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .btn-ganti-nama {
+    background-color: #ffc107;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .btn-ganti-nama:hover {
+    background-color: #e0a800;
+  }
+
+  .top-right-buttons {
+    display: none;
+  }
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 60px;
+  left: 10px;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 10000;
+}
+
+.dropdown-menu img {
+  width: 30px;
+  height: 30px;
+  background-color: #f5f5f5;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* POPUP */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h3 {
+  margin-top: 0;
+  font-size: 1.8em;
+  color: #007acc;
+}
+
+.popup-content input {
+  width: 90%;
+  padding: 10px;
+  font-size: 1em;
+  margin-top: 10px;
+  border: 2px solid #007acc;
+  border-radius: 8px;
+}
+
+.popup-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* PROFIL */
+#popup-profil {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#popup-profil .popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  color: #333;
+}
