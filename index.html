@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<!-- NAVBAR MOBILE -->
+<!-- Navbar Mobile -->
 <div class="navbar-mobile">
   <div class="hamburger-icon" id="hamburger">&#9776;</div>
   <div class="user-info">
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<!-- Dropdown menu mobile -->
+<!-- Dropdown menu -->
 <div class="dropdown-menu" id="dropdown-menu">
   <img src="media/saya.png" alt="Profil" class="btn-profil" title="Profil Pengguna">
   <img src="media/play.png" alt="Mainkan Musik" class="btn-play" title="Mainkan Musik">
@@ -28,16 +28,16 @@
   <img src="media/information.png" alt="Informasi" class="btn-information" title="Informasi">
 </div>
 
-<!-- NAVIGATION DESKTOP -->
+<!-- Navbar Desktop -->
 <div class="top-right-buttons">
-  <button id="reset-nama-btn" class="btn-reset-nama">Ganti Nama Pengguna</button>
-  <img src="media/saya.png" alt="profil" class="btn-profil" title="Profil Pengguna" width="50px" />
-  <img src="media/play.png" alt="play" class="btn-play" title="Mainkan Musik" width="45px" />
-  <img src="media/mute.png" alt="mute" class="btn-mute" title="Matikan Musik" width="50px" />
-  <img src="media/information.png" alt="information" class="btn-information" title="Informasi" width="50px" />
+  <button id="reset-nama-btn" class="btn-reset-nama">Ganti Nama</button>
+  <img src="media/saya.png" alt="Profil" class="btn-profil" title="Profil Pengguna" />
+  <img src="media/play.png" alt="Play" class="btn-play" title="Mainkan Musik" />
+  <img src="media/mute.png" alt="Mute" class="btn-mute" title="Matikan Musik" />
+  <img src="media/information.png" alt="Info" class="btn-information" title="Informasi" />
 </div>
 
-<!-- CONTAINER UTAMA -->
+<!-- Konten Utama -->
 <div class="container">
   <div class="judul-utama">
     <h1>Media Pembelajaran Interaktif</h1>
@@ -59,11 +59,10 @@
   </div>
 </div>
 
-<!-- POPUP PROFIL -->
+<!-- Popup Profil -->
 <div id="popup-profil">
   <div class="popup-content">
     <img src="media/profil.png" alt="Foto Profil" />
-    <p><strong>PROFIL PEMBUAT</strong></p>
     <p><strong>Nama:</strong> Hikmatullah, S.Pd</p>
     <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
     <p><strong>Jabatan:</strong> Guru Kelas</p>
@@ -71,43 +70,15 @@
   </div>
 </div>
 
-<!-- POPUP INPUT NAMA PENGGUNA -->
+<!-- Popup Nama -->
 <div id="popup-nama" class="popup-overlay">
   <div class="popup-content">
     <h3>Selamat datang!</h3>
     <p>Silakan masukkan nama kamu:</p>
-    <input type="text" id="input-nama" placeholder="Nama lengkap" autocomplete="off" />
+    <input type="text" id="input-nama" placeholder="Nama lengkap" />
     <button id="btn-simpan-nama">Mulai</button>
   </div>
 </div>
-
-<!-- SCRIPT NAVBAR -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.getElementById("hamburger");
-    const menu = document.getElementById("dropdown-menu");
-    const allButtons = menu.querySelectorAll("img, button");
-
-    hamburger.addEventListener("click", () => {
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    });
-
-    allButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        menu.style.display = "none";
-      });
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        menu.style.display = "none";
-      }
-    });
-
-    const nama = localStorage.getItem("namaPengguna") || "Pengguna";
-    document.getElementById("displayNamaPengguna").innerText = nama;
-  });
-</script>
 
 </body>
 </html>
