@@ -1,4 +1,4 @@
-/* Reset dasar */
+/* RESET & FONT */
 * {
   margin: 0;
   padding: 0;
@@ -14,57 +14,41 @@ body {
   flex-direction: column;
 }
 
-/* Nama Pengguna (khusus desktop) */
-#nama-pengguna-label {
-  position: absolute;
-  top: 20px;
-  left: 90px;
-  font-size: 24px;
-  background-color: rgba(139, 199, 133, 0.8);
-  padding: 6px 12px;
-  border-radius: 12px;
-  color: black;
-  z-index: 999;
-  font-family: 'Chewy', cursive;
-  box-shadow: 0 2px 6px rgba(15, 15, 197, 0.84);
-}
-
-/* Container */
 .container {
+  margin-top: 100px;
+  padding: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
 }
 
 .judul-utama {
   text-align: center;
-  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .judul-utama h1 {
-  font-size: 50px;
+  font-size: 48px;
   color: #fff;
   text-shadow: 4px 4px 4px #000;
 }
 
 .judul-utama h2 {
-  font-size: 45px;
+  font-size: 40px;
   color: #eee;
   text-shadow: 4px 4px 2px #000;
-  margin-top: 1px;
+  margin-top: 10px;
 }
 
 .judul-game {
-  text-align: center;
-  font-size: 30px;
+  font-size: 28px;
   color: #fff;
-  text-shadow: 4px 4px 4px #000;
-  margin: 20px 0 10px;
+  text-shadow: 2px 2px 2px #000;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-/* Menu Game */
 .menu-wrapper {
   display: flex;
   flex-direction: column;
@@ -100,12 +84,12 @@ body {
 
 .label {
   margin-top: 10px;
-  font-size: 40px;
+  font-size: 28px;
   color: #070000;
   text-shadow: 1px 1px 2px #ffffff;
 }
 
-/* Tombol Navigasi Kanan (desktop) */
+/* NAVIGATION DESKTOP */
 .top-right-buttons {
   position: fixed;
   top: 20px;
@@ -125,24 +109,100 @@ body {
   cursor: pointer;
 }
 
-/* Tombol Ganti Nama */
 .btn-reset-nama {
   background-color: #ffc107;
   color: #000;
-  font-size: 16px;
-  padding: 10px 16px;
+  font-size: 14px;
+  padding: 6px 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
 }
 
 .btn-reset-nama:hover {
   background-color: #e0a800;
 }
 
-/* Popup Nama */
+/* NAVBAR MOBILE */
+.navbar-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 10001;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .hamburger-icon {
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .user-info span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .btn-ganti-nama {
+    background-color: #ffc107;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .btn-ganti-nama:hover {
+    background-color: #e0a800;
+  }
+
+  .top-right-buttons {
+    display: none;
+  }
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 60px;
+  left: 10px;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 10000;
+}
+
+.dropdown-menu img {
+  width: 30px;
+  height: 30px;
+  background-color: #f5f5f5;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* POPUP */
 .popup-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -168,11 +228,6 @@ body {
   color: #007acc;
 }
 
-.popup-content p {
-  font-size: 1.1em;
-  color: #333;
-}
-
 .popup-content input {
   width: 90%;
   padding: 10px;
@@ -193,11 +248,7 @@ body {
   cursor: pointer;
 }
 
-.popup-content button:hover {
-  background-color: #005f99;
-}
-
-/* Popup Profil */
+/* PROFIL */
 #popup-profil {
   display: none;
   position: fixed;
@@ -218,252 +269,4 @@ body {
   width: 90%;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   color: #333;
-}
-
-#popup-profil img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
-#popup-profil p {
-  font-size: 18px;
-  margin: 8px 0;
-}
-
-#popup-close {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-#popup-close:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-/* ==== Navbar Mobile ==== */
-.navbar-mobile {
-  display: none;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 12px;
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 10px;
-  z-index: 10001;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.hamburger-icon {
-  font-size: 26px;
-  cursor: pointer;
-  color: #000;
-}
-
-.user-name {
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-  background-color: #e0f7da;
-  padding: 4px 10px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  max-width: 150px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Dropdown Mobile Menu */
-.dropdown-menu {
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  position: fixed;
-  top: 65px;
-  left: 20px;
-  background: #ffffff;
-  padding: 12px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 10000;
-}
-
-.dropdown-menu img {
-  width: 28px;
-  height: 28px;
-  padding: 4px;
-  background-color: #f5f5f5;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  cursor: pointer;
-}
-
-.dropdown-menu button {
-  font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background-color: #ffc107;
-  color: black;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown-menu button:hover {
-  background-color: #e0a800;
-}
-
-/* ===== MEDIA QUERY UNTUK MOBILE ===== */
-@media (max-width: 600px) {
-  .judul-utama h1 {
-    font-size: 28px;
-  }
-
-  .judul-utama h2 {
-    font-size: 20px;
-  }
-
-  .judul-game {
-    font-size: 18px;
-  }
-
-  .label {
-    font-size: 18px;
-  }
-
-  .menu-item img {
-    width: 120px;
-  }
-
-  #nama-pengguna-label {
-    display: none;
-  }
-
-  .top-right-buttons {
-    display: none;
-  }
-
-  .navbar-mobile {
-    display: flex;
-  }
-
-  .dropdown-menu {
-    width: auto;
-    max-width: 180px;
-  }
-
-  #reset-nama-btn-mobile {
-    display: block;
-    font-size: 14px;
-    padding: 6px 10px;
-    margin-top: 10px;
-    width: 100%;
-  }
-}
-.menu-item-mobile {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.menu-item-mobile img {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-}
-
-.btn-ganti-nama {
-  margin-left: 10px;
-  background-color: #ffc107;
-  border: none;
-  border-radius: 6px;
-  padding: 4px 8px;
-  font-size: 12px;
-  cursor: pointer;
-}
-/* NAVBAR MOBILE */
-.navbar-mobile {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 10001;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.hamburger-icon {
-  font-size: 26px;
-  cursor: pointer;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.user-info span {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-}
-
-.btn-ganti-nama {
-  background-color: #ffc107;
-  border: none;
-  border-radius: 6px;
-  padding: 4px 10px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.btn-ganti-nama:hover {
-  background-color: #e0a800;
-}
-.container {
-  margin-top: 80px; /* agar konten turun sedikit */
-  padding: 20px;
-}
-.menu-item-mobile {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.menu-item-mobile img {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-}
-
-.btn-ganti-nama {
-  margin-left: 10px;
-  background-color: #ffc107;
-  border: none;
-  border-radius: 6px;
-  padding: 4px 8px;
-  font-size: 12px;
-  cursor: pointer;
 }
