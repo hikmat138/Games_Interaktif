@@ -13,17 +13,33 @@
 
 <!-- Navigasi Atas (Mobile) -->
 <div class="navbar-mobile">
-  <div class="hamburger-icon" id="hamburger">&#9776;</div>
-  <div class="user-name" id="displayNamaPengguna">Nama</div>
+  <div class="left-nav">
+    <div class="hamburger-icon" id="hamburger">&#9776;</div>
+    <div class="user-info">
+      <div class="user-name" id="displayNamaPengguna">Nama</div>
+      <button id="reset-nama-btn-mobile" class="btn-ganti-nama">Ganti</button>
+    </div>
+  </div>
 </div>
 
 <!-- Dropdown menu mobile -->
 <div class="dropdown-menu" id="dropdown-menu">
-  <img src="media/saya.png" alt="profil" class="btn-profil" label= "Pofil Pengguna" data-menu="profil">
-  <img src="media/play.png" alt="play" class="btn-play" label= "Mainkan Musik" data-menu="play">
-  <img src="media/mute.png" alt="mute" class="btn-mute" label= "Matikan Musik" data-menu="mute">
-  <img src="media/information.png" alt="information" class="btn-information" label=" Informasi" data-menu="information">
-  <button id="reset-nama-btn-mobile">Ganti Nama Pengguna</button>
+  <div class="menu-item-mobile">
+    <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil">
+    <span>Profil</span>
+  </div>
+  <div class="menu-item-mobile">
+    <img src="media/play.png" alt="play" class="btn-play" data-menu="play">
+    <span>Main</span>
+  </div>
+  <div class="menu-item-mobile">
+    <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute">
+    <span>Mute</span>
+  </div>
+  <div class="menu-item-mobile">
+    <img src="media/information.png" alt="information" class="btn-information" data-menu="information">
+    <span>Info</span>
+  </div>
 </div>
 
 <!-- Navigasi Desktop -->
@@ -37,7 +53,7 @@
 
 <!-- Container Utama -->
 <div class="container">
-  <div class="judul-utama">
+  <div class="judul-utama" style="margin-top: 90px;">
     <h1>Media Pembelajaran Interaktif</h1>
     <h2>Kelas 5 Sekolah Dasar</h2>
   </div>
@@ -79,12 +95,12 @@
   </div>
 </div>
 
-<!-- Script hamburger -->
+<!-- Script Hamburger + Nama Pengguna -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.getElementById("hamburger");
     const menu = document.getElementById("dropdown-menu");
-    const allButtons = menu.querySelectorAll("img, button");
+    const allButtons = menu.querySelectorAll("img, button, .menu-item-mobile");
 
     hamburger.addEventListener("click", () => {
       menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
@@ -107,6 +123,14 @@
     // Tampilkan nama pengguna
     const nama = localStorage.getItem("namaPengguna") || "Pengguna";
     document.getElementById("displayNamaPengguna").innerText = nama;
+
+    // Reset nama versi mobile
+    document.getElementById("reset-nama-btn-mobile")?.addEventListener("click", () => {
+      if (confirm("Yakin ingin mengganti nama pengguna?")) {
+        localStorage.removeItem("nama_pengguna");
+        location.reload();
+      }
+    });
   });
 </script>
 
