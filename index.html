@@ -11,17 +11,20 @@
 </head>
 <body>
 
-  <!-- Hamburger menu (tampil di mobile) -->
-  <div id="hamburger" class="hamburger">&#9776;</div>
+ <!-- Tombol hamburger menu (sebelum .container) -->
+<div class="hamburger-menu">
+  <img src="media/menu.png" id="hamburger-toggle" alt="Menu">
+</div>
 
-  <!-- Dropdown menu (muncul saat hamburger diklik) -->
-  <div id="dropdown-menu" class="dropdown-menu">
-    <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil" width="30px" />
-    <img src="media/play.png" alt="play" class="btn-play" data-menu="play" width="30px" />
-    <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute" width="30px" />
-    <img src="media/information.png" alt="info" class="btn-information" data-menu="information" width="30px" />
-    <button class="btn-reset-nama">Ganti Nama Pengguna</button>
-  </div>
+<!-- Dropdown menu mobile -->
+<div class="dropdown-menu" id="dropdown-menu">
+  <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil">
+  <img src="media/play.png" alt="play" class="btn-play" data-menu="play">
+  <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute">
+  <img src="media/information.png" alt="information" class="btn-information" data-menu="information">
+  <button id="reset-nama-btn-mobile">Ganti Nama Pengguna</button>
+</div>
+
 
   <!-- Tombol Navigasi Kanan (untuk tampilan desktop) -->
   <div class="top-right-buttons">
