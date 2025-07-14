@@ -371,3 +371,27 @@ body {
     width: 100%;
   }
 }
+.menu-item-mobile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-item-mobile img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.btn-ganti-nama {
+  margin-left: 10px;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
