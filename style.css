@@ -1,74 +1,115 @@
-body {
-  font-family: 'Chewy', cursive;
-  background: url('media/wood.gif') no-repeat center center fixed;
-  background-size: cover;
-  margin: 0;
-}
+/* === TAMBAHAN UNTUK MOBILE === */
 
-.container {
-  margin-top: 120px; /* Supaya tidak tertimpa navbar */
-  text-align: center;
-}
-
-.navbar-mobile {
+/* Hamburger menu style */
+.hamburger {
   display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10001;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
+/* Responsive navbar */
 @media (max-width: 768px) {
-  .navbar-mobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 16px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    z-index: 10001;
-  }
-
-  .hamburger-icon {
-    font-size: 28px;
-    cursor: pointer;
-  }
-
-  .user-info {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .btn-ganti-nama {
-    background-color: #ffc107;
-    border: none;
-    border-radius: 6px;
-    padding: 4px 8px;
-    font-size: 12px;
-    cursor: pointer;
-  }
-
   .top-right-buttons {
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(255,255,255,0.9);
+    padding: 10px;
+    border-radius: 12px;
+    position: fixed;
+    top: 60px;
+    right: 10px;
     display: none;
   }
-}
 
-.dropdown-menu {
-  display: none;
-  flex-direction: column;
-  position: fixed;
-  top: 60px;
-  left: 10px;
-  background: #fff;
-  border-radius: 12px;
-  padding: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 10002;
-}
+  .top-right-buttons.active {
+    display: flex;
+  }
 
-.dropdown-menu img {
-  width: 32px;
-  margin: 6px;
-  border-radius: 6px;
-  cursor: pointer;
+  .btn-reset-nama {
+    font-size: 14px;
+    padding: 8px 10px;
+    width: 100%;
+  }
+
+  .top-right-buttons img {
+    width: 40px !important;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .judul-utama h1 {
+    font-size: 30px;
+  }
+
+  .judul-utama h2 {
+    font-size: 24px;
+  }
+
+  .judul-game {
+    font-size: 22px;
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  .menu-horizontal {
+    gap: 20px;
+  }
+
+  .menu-item img {
+    width: 90vw;
+    max-width: 240px;
+  }
+
+  .popup-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .popup-content h3 {
+    font-size: 1.4em;
+  }
+
+  .popup-content p {
+    font-size: 1em;
+  }
+
+  .popup-content input {
+    font-size: 1em;
+  }
+
+  .popup-content button {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+
+  #popup-close {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  #popup-profil .popup-content {
+    width: 90%;
+  }
+
+  #popup-profil p {
+    font-size: 16px;
+  }
+
+  #popup-profil img {
+    width: 100px;
+    height: 100px;
+  }
 }
