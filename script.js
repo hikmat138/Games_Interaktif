@@ -1,14 +1,16 @@
-// === POPUP PROFIL ===
-window.addEventListener("load", function () {
+// === POPUP PROFIL SAAT PERTAMA KALI ===
+document.addEventListener("DOMContentLoaded", () => {
   if (!localStorage.getItem("hkmtPopupShown")) {
     setTimeout(() => {
-      document.getElementById("popup-profil").style.display = "flex";
-      localStorage.setItem("hkmtPopupShown", "true");
+      const popup = document.getElementById("popup-profil");
+      if (popup) {
+        popup.style.display = "flex";
+        localStorage.setItem("hkmtPopupShown", "true");
+      }
     }, 1000);
   }
-});
 
-window.addEventListener("DOMContentLoaded", () => {
+  // === TOMBOL PROFIL ===
   document.querySelector(".btn-profil")?.addEventListener("click", () => {
     document.getElementById("popup-profil").style.display = "flex";
   });
@@ -17,11 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("popup-profil").style.display = "none";
   });
 
+  // === INFORMASI APP ===
   document.querySelector(".btn-information")?.addEventListener("click", () => {
-    alert("Ini adalah media pembelajaran interaktif untuk siswa kelas 5 SD");
+    alert("Ini adalah media pembelajaran interaktif untuk siswa kelas 5 SD.");
   });
 
-  // Musik
+  // === PLAY & PAUSE MUSIK ===
   const musik = new Audio('media/musik.mp3');
   musik.loop = true;
 
@@ -41,13 +44,14 @@ window.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem('musikPaused', 'true');
   });
 
+  // Simpan posisi musik terakhir setiap detik
   setInterval(() => {
     if (!musik.paused) {
       localStorage.setItem('musikTime', musik.currentTime.toString());
     }
   }, 1000);
 
-  // Navigasi Halaman
+  // === NAVIGASI KE NUMERASI & LITERASI ===
   document.querySelector(".btn-numerasi")?.addEventListener("click", () => {
     window.location.href = "numerasi.html";
   });
@@ -56,6 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
     window.location.href = "literasi.html";
   });
 
+  // === RESET NAMA PENGGUNA ===
   document.getElementById("reset-nama-btn")?.addEventListener("click", () => {
     if (confirm("Yakin ingin mengganti nama pengguna?")) {
       localStorage.removeItem("nama_pengguna");
@@ -63,68 +68,13 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.getElementById("reset-nama-btn-mobile")?.addEventListener("click", () => {
-    if (confirm("Yakin ingin mengganti nama pengguna?")) {
-      localStorage.removeItem("nama_pengguna");
-      location.reload();
-    }
-  });
+  // === TOGGLE HAMBURGER MENU (UNTUK MOBILE) ===
+  const hamburgerBtn = document.getElementById("hamburger-menu");
+  const navLinks = document.getElementById("nav-links");
 
-  // === HAMBURGER MENU ===
-  const hamburger = document.getElementById('hamburger');
-  const dropdownMenu = document.getElementById('dropdown-menu');
-
-  hamburger?.addEventListener('click', () => {
-    const isVisible = dropdownMenu.style.display === 'flex';
-    dropdownMenu.style.display = isVisible ? 'none' : 'flex';
-  });
-
-  // Tutup menu saat salah satu item di dropdown diklik
-  const dropdownItems = dropdownMenu.querySelectorAll('img, button');
-  dropdownItems.forEach(item => {
-    item.addEventListener('click', () => {
-      dropdownMenu.style.display = 'none';
+  if (hamburgerBtn && navLinks) {
+    hamburgerBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
     });
-  });
-
-  // Tutup dropdown menu saat resize ke desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-      dropdownMenu.style.display = "none";
-    }
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const dropdown = document.getElementById("dropdown-menu");
-
-  hamburger.addEventListener("click", () => {
-    dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
-  });
-
-  // Tutup dropdown jika salah satu menu diklik
-  dropdown.querySelectorAll("img").forEach(btn => {
-    btn.addEventListener("click", () => {
-      dropdown.style.display = "none";
-    });
-  });
-
-  // Tampilkan nama pengguna dari localStorage
-  const nama = localStorage.getItem("namaPengguna") || "Pengguna";
-  document.getElementById("displayNamaPengguna").innerText = nama;
-
-  // Ganti nama
-  document.getElementById("reset-nama-btn-mobile")?.addEventListener("click", () => {
-    if (confirm("Ingin ganti nama pengguna?")) {
-      localStorage.removeItem("namaPengguna");
-      location.reload();
-    }
-  });
-
-  document.getElementById("reset-nama-btn")?.addEventListener("click", () => {
-    if (confirm("Ingin ganti nama pengguna?")) {
-      localStorage.removeItem("namaPengguna");
-      location.reload();
-    }
-  });
+  }
 });
