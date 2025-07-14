@@ -94,3 +94,37 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const dropdown = document.getElementById("dropdown-menu");
+
+  hamburger.addEventListener("click", () => {
+    dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Tutup dropdown jika salah satu menu diklik
+  dropdown.querySelectorAll("img").forEach(btn => {
+    btn.addEventListener("click", () => {
+      dropdown.style.display = "none";
+    });
+  });
+
+  // Tampilkan nama pengguna dari localStorage
+  const nama = localStorage.getItem("namaPengguna") || "Pengguna";
+  document.getElementById("displayNamaPengguna").innerText = nama;
+
+  // Ganti nama
+  document.getElementById("reset-nama-btn-mobile")?.addEventListener("click", () => {
+    if (confirm("Ingin ganti nama pengguna?")) {
+      localStorage.removeItem("namaPengguna");
+      location.reload();
+    }
+  });
+
+  document.getElementById("reset-nama-btn")?.addEventListener("click", () => {
+    if (confirm("Ingin ganti nama pengguna?")) {
+      localStorage.removeItem("namaPengguna");
+      location.reload();
+    }
+  });
+});
