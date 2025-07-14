@@ -352,3 +352,20 @@ footer {
     font-size: 20px;
   }
 }
+.dropdown-menu img {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+  }
+
+  .dropdown-menu {
+    top: 60px;
+    left: 10px;
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .dropdown-menu button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
