@@ -74,10 +74,8 @@ setInterval(() => {
     location.reload(); // agar prompt nama muncul lagi
   }
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const menu = document.getElementById("dropdown-menu");
-  hamburger.addEventListener("click", () => {
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-  });
+document.getElementById('hamburger-toggle').addEventListener('click', function () {
+  const menu = document.getElementById('dropdown-menu');
+  menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
 });
+
