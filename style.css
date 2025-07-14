@@ -1,4 +1,4 @@
-/* RESET DASAR */
+/* Reset dasar */
 * {
   margin: 0;
   padding: 0;
@@ -9,130 +9,12 @@ body {
   font-family: 'Chewy', cursive;
   background: url('media/wood.gif') no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #fff;
 }
 
-/* CONTAINER */
-.container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 20px;
-  flex-direction: column;
-}
-
-.judul-utama {
-  text-align: center;
-  margin-top: 30px;
-}
-.judul-utama h1 {
-  font-size: 50px;
-  color: #fff;
-  text-shadow: 4px 4px 4px #000;
-}
-.judul-utama h2 {
-  font-size: 45px;
-  color: #eee;
-  text-shadow: 4px 4px 2px #000;
-  margin-top: 1px;
-}
-
-/* PILIHAN GAME */
-.menu-wrapper {
-  text-align: center;
-}
-.judul-game {
-  font-size: 30px;
-  color: #fff;
-  text-shadow: 4px 4px 4px #000;
-  margin-bottom: 10px;
-}
-
-.menu-horizontal {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.menu-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.menu-item img {
-  width: 80vw;
-  max-width: 300px;
-  height: auto;
-  cursor: pointer;
-  border-radius: 12px;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-  transition: transform 0.2s, filter 0.2s;
-}
-.menu-item img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-.menu-item img:active {
-  transform: scale(0.95);
-  filter: brightness(0.85);
-}
-.label {
-  margin-top: 10px;
-  font-size: 40px;
-  color: #070000;
-  text-shadow: 1px 1px 2px #ffffff;
-}
-
-/* TOMBOL NAVIGASI (DESKTOP) */
-.top-right-buttons {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 12px;
-  z-index: 10000;
-  align-items: center;
-  justify-content: center;
-}
-.top-right-buttons img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 8px;
-  background-color: #fff;
-  padding: 5px;
-  width: 40px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-.top-right-buttons img:hover {
-  transform: scale(1.1);
-  background-color: #f0f0f020;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-.btn-reset-nama {
-  background-color: #ffc107;
-  color: #000;
-  font-size: 16px;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-}
-.btn-reset-nama:hover {
-  background-color: #e0a800;
-}
-
-/* NAMA PENGGUNA */
+/* Nama Pengguna */
 #nama-pengguna-label {
   position: absolute;
   top: 20px;
@@ -147,53 +29,120 @@ body {
   box-shadow: 0 2px 6px rgba(15, 15, 197, 0.84);
 }
 
-/* POPUP PROFIL */
-#popup-profil {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
+/* Container */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  z-index: 9999;
-}
-#popup-profil .popup-content {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-#popup-profil img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-#popup-profil p {
-  font-size: 18px;
-  margin: 8px 0;
-}
-#popup-close {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #007bff;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-#popup-close:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
+  padding: 20px;
 }
 
-/* POPUP INPUT NAMA */
+.judul-utama {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.judul-utama h1 {
+  font-size: 50px;
+  color: #fff;
+  text-shadow: 4px 4px 4px #000;
+}
+
+.judul-utama h2 {
+  font-size: 45px;
+  color: #eee;
+  text-shadow: 4px 4px 2px #000;
+  margin-top: 1px;
+}
+
+.judul-game {
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 4px 4px 4px #000;
+  margin: 20px 0 10px;
+}
+
+/* Menu Game */
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-horizontal {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-item img {
+  width: 80vw;
+  max-width: 300px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.menu-item img:hover {
+  transform: scale(1.05);
+  filter: grayscale(70%) brightness(0.95);
+}
+
+.label {
+  margin-top: 10px;
+  font-size: 40px;
+  color: #070000;
+  text-shadow: 1px 1px 2px #ffffff;
+}
+
+/* Tombol Navigasi Kanan */
+.top-right-buttons {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 10000;
+  align-items: center;
+}
+
+.top-right-buttons img {
+  width: 50px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* Tombol Ganti Nama */
+.btn-reset-nama {
+  background-color: #ffc107;
+  color: #000;
+  font-size: 16px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-reset-nama:hover {
+  background-color: #e0a800;
+}
+
+/* Popup Nama */
 .popup-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -204,6 +153,7 @@ body {
   justify-content: center;
   z-index: 9999;
 }
+
 .popup-content {
   background-color: #fff;
   padding: 30px 25px;
@@ -211,23 +161,27 @@ body {
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+
 .popup-content h3 {
   margin-top: 0;
   font-size: 1.8em;
   color: #007acc;
 }
+
 .popup-content p {
   font-size: 1.1em;
   color: #333;
 }
+
 .popup-content input {
   width: 90%;
   padding: 10px;
-  margin-top: 10px;
   font-size: 1em;
+  margin-top: 10px;
   border: 2px solid #007acc;
   border-radius: 8px;
 }
+
 .popup-content button {
   margin-top: 15px;
   padding: 10px 20px;
@@ -238,37 +192,82 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
+
 .popup-content button:hover {
   background-color: #005f99;
 }
 
-/* FOOTER */
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: 10px;
-}
-
-/* HAMBURGER MENU */
-.hamburger {
+/* Popup Profil */
+#popup-profil {
   display: none;
   position: fixed;
-  top: 10px;
-  right: 15px;
-  font-size: 32px;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#popup-profil .popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  color: #333;
+}
+
+#popup-profil img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+#popup-profil p {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+#popup-close {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007bff;
   color: white;
-  z-index: 10001;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
 }
-/* Dropdown untuk menu mobile */
+
+#popup-close:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Hamburger Menu Mobile */
+.hamburger-menu {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10001;
+}
+
+.hamburger-menu img {
+  width: 35px;
+  cursor: pointer;
+}
+
+/* Dropdown Mobile Menu */
 .dropdown-menu {
   display: none;
   flex-direction: column;
   gap: 10px;
   position: fixed;
-  top: 65px;
+  top: 70px;
   left: 20px;
   background: #ffffff;
   padding: 12px;
@@ -278,68 +277,30 @@ footer {
 }
 
 .dropdown-menu img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+  width: 28px;
+  height: 28px;
   padding: 4px;
-  border-radius: 6px;
   background-color: #f5f5f5;
+  border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  cursor: pointer;
 }
 
 .dropdown-menu button {
   font-size: 14px;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border-radius: 8px;
   background-color: #ffc107;
   color: black;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .dropdown-menu button:hover {
   background-color: #e0a800;
 }
 
-/* RESPONSIF MOBILE */
-@media screen and (max-width: 768px) {
-  .top-right-buttons {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  #nama-pengguna-label {
-    font-size: 14px;
-    top: 60px;
-    left: 10px;
-    padding: 4px 8px;
-    max-width: 90%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .label {
-    font-size: 16px;
-  }
-
-  .menu-item img {
-    width: 60vw;
-    max-width: 200px;
-  }
-
-  .btn-reset-nama {
-    font-size: 12px;
-    padding: 6px 10px;
-    display: block;
-    margin: 4px auto 0 auto;
-  }
-
+/* ===== MEDIA QUERY UNTUK MOBILE ===== */
+@media (max-width: 600px) {
   .judul-utama h1 {
     font-size: 28px;
   }
@@ -349,23 +310,36 @@ footer {
   }
 
   .judul-game {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .label {
+    font-size: 18px;
+  }
+
+  .menu-item img {
+    width: 120px;
+  }
+
+  #nama-pengguna-label {
+    font-size: 16px;
+    top: 16px;
+    left: 65px;
+    padding: 4px 8px;
+  }
+
+  .top-right-buttons {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  #reset-nama-btn-mobile {
+    display: block;
+    font-size: 14px;
+    padding: 6px 10px;
+    margin-top: 10px;
   }
 }
-.dropdown-menu img {
-    width: 24px;
-    height: 24px;
-    padding: 2px;
-  }
-
-  .dropdown-menu {
-    top: 60px;
-    left: 10px;
-    padding: 8px;
-    gap: 6px;
-  }
-
-  .dropdown-menu button {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
