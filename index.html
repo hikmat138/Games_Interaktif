@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Interaktif SD</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
   <script defer src="script.js"></script>
   <script defer src="nama_pengguna.js"></script>
 </head>
 <body>
-  <!-- Navbar dan Hamburger Menu -->
-  <nav class="navbar">
-    <div class="hamburger" id="hamburger-menu">
-      ☰
-    </div>
-    <div class="top-right-buttons" id="nav-links">
-      <button id="reset-nama-btn" class="btn-reset-nama">Ganti Nama Pengguna</button>
-      <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil" width="50">
-      <img src="media/play.png" alt="play" class="btn-play" data-menu="play" width="45">
-      <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute" width="50">
-      <img src="media/information.png" alt="information" class="btn-information" data-menu="information" width="50">
-    </div>
-  </nav>
+  <!-- Tombol Navigasi Kanan -->
+  <div class="top-right-buttons">
+    <button id="reset-nama-btn" class="btn-reset-nama">Ganti Nama Pengguna</button>
+    <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil" width="50px">
+    <img src="media/play.png" alt="play" class="btn-play" data-menu="play" width="45px">
+    <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute" width="50px">
+    <img src="media/information.png" alt="information" class="btn-information" data-menu="information" width="50px">
+  </div>
 
   <!-- Container Utama -->
   <div class="container">
@@ -47,10 +42,10 @@
   </div>
 
   <!-- Popup Profil Pembuat -->
-  <div id="popup-profil" class="popup-overlay">
+  <div id="popup-profil">
     <div class="popup-content">
       <img src="media/profil.png" alt="Foto Profil">
-      <p>PROFIL PEMBUAT</p>
+      <p> PROFIL PEMBUAT </p>
       <p><strong>Nama:</strong> Hikmatullah, S.Pd</p>
       <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
       <p><strong>Jabatan:</strong> Guru Kelas</p>
@@ -67,13 +62,5 @@
       <button id="btn-simpan-nama">Mulai</button>
     </div>
   </div>
-
-  <script>
-    // Script buka tutup menu di mobile
-    document.getElementById("hamburger-menu").addEventListener("click", function () {
-      const navLinks = document.getElementById("nav-links");
-      navLinks.classList.toggle("active");
-    });
-  </script>
 </body>
 </html>
