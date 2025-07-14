@@ -11,9 +11,10 @@
 </head>
 <body>
 
- <!-- Tombol hamburger menu (sebelum .container) -->
-<div class="hamburger-menu">
-  <img src="media/menu.png" id="hamburger-toggle" alt="Menu">
+<!-- Navigasi Atas (Mobile) -->
+<div class="navbar-mobile">
+  <div class="hamburger-icon" id="hamburger">&#9776;</div>
+  <div class="user-name" id="displayNamaPengguna">Nama</div>
 </div>
 
 <!-- Dropdown menu mobile -->
@@ -25,76 +26,89 @@
   <button id="reset-nama-btn-mobile">Ganti Nama Pengguna</button>
 </div>
 
+<!-- Navigasi Desktop -->
+<div class="top-right-buttons">
+  <button id="reset-nama-btn" class="btn-reset-nama">Ganti Nama Pengguna</button>
+  <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil" width="50px" />
+  <img src="media/play.png" alt="play" class="btn-play" data-menu="play" width="45px" />
+  <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute" width="50px" />
+  <img src="media/information.png" alt="information" class="btn-information" data-menu="information" width="50px" />
+</div>
 
-  <!-- Tombol Navigasi Kanan (untuk tampilan desktop) -->
-  <div class="top-right-buttons">
-    <button id="reset-nama-btn" class="btn-reset-nama">Ganti Nama Pengguna</button>
-    <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil" width="50px" />
-    <img src="media/play.png" alt="play" class="btn-play" data-menu="play" width="45px" />
-    <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute" width="50px" />
-    <img src="media/information.png" alt="information" class="btn-information" data-menu="information" width="50px" />
+<!-- Container Utama -->
+<div class="container">
+  <div class="judul-utama">
+    <h1>Media Pembelajaran Interaktif</h1>
+    <h2>Kelas 5 Sekolah Dasar</h2>
   </div>
 
-  <!-- Container Utama -->
-  <div class="container">
-    <div class="judul-utama">
-      <h1>Media Pembelajaran Interaktif</h1>
-      <h2>Kelas 5 Sekolah Dasar</h2>
-    </div>
-
-    <div class="menu-wrapper">
-      <p class="judul-game">Silakan pilih game:</p>
-      <div class="menu-horizontal">
-        <div class="menu-item">
-          <img src="media/matematika.png" alt="Game Numerasi" class="btn-numerasi" data-menu="numerasi" />
-          <p class="label">Game Numerasi</p>
-        </div>
-        <div class="menu-item">
-          <img src="media/baca.png" alt="Game Literasi" class="btn-literasi" data-menu="literasi" />
-          <p class="label">Game Literasi</p>
-        </div>
+  <div class="menu-wrapper">
+    <p class="judul-game">Silakan pilih game:</p>
+    <div class="menu-horizontal">
+      <div class="menu-item">
+        <img src="media/matematika.png" alt="Game Numerasi" class="btn-numerasi" data-menu="numerasi" />
+        <p class="label">Game Numerasi</p>
+      </div>
+      <div class="menu-item">
+        <img src="media/baca.png" alt="Game Literasi" class="btn-literasi" data-menu="literasi" />
+        <p class="label">Game Literasi</p>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Popup Profil Pembuat -->
-  <div id="popup-profil">
-    <div class="popup-content">
-      <img src="media/profil.png" alt="Foto Profil" />
-      <p> PROFIL PEMBUAT </p>
-      <p><strong>Nama:</strong> Hikmatullah, S.Pd</p>
-      <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
-      <p><strong>Jabatan:</strong> Guru Kelas</p>
-      <button id="popup-close">Tutup</button>
-    </div>
+<!-- Popup Profil Pembuat -->
+<div id="popup-profil">
+  <div class="popup-content">
+    <img src="media/profil.png" alt="Foto Profil" />
+    <p> PROFIL PEMBUAT </p>
+    <p><strong>Nama:</strong> Hikmatullah, S.Pd</p>
+    <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
+    <p><strong>Jabatan:</strong> Guru Kelas</p>
+    <button id="popup-close">Tutup</button>
   </div>
+</div>
 
-  <!-- Popup Input Nama Pengguna -->
-  <div id="popup-nama" class="popup-overlay">
-    <div class="popup-content">
-      <h3>Selamat datang!</h3>
-      <p>Silakan masukkan nama kamu:</p>
-      <input type="text" id="input-nama" placeholder="Nama lengkap" autocomplete="off" />
-      <button id="btn-simpan-nama">Mulai</button>
-    </div>
+<!-- Popup Input Nama Pengguna -->
+<div id="popup-nama" class="popup-overlay">
+  <div class="popup-content">
+    <h3>Selamat datang!</h3>
+    <p>Silakan masukkan nama kamu:</p>
+    <input type="text" id="input-nama" placeholder="Nama lengkap" autocomplete="off" />
+    <button id="btn-simpan-nama">Mulai</button>
   </div>
+</div>
 
-  <!-- Script hamburger -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const hamburger = document.getElementById("hamburger");
-      const menu = document.getElementById("dropdown-menu");
+<!-- Script hamburger -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("dropdown-menu");
+    const allButtons = menu.querySelectorAll("img, button");
 
-      hamburger.addEventListener("click", () => {
-        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-      });
+    hamburger.addEventListener("click", () => {
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    });
 
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 768) {
-          menu.style.display = "none";
-        }
+    // Tutup menu jika salah satu tombol diklik
+    allButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        menu.style.display = "none";
       });
     });
-  </script>
+
+    // Tutup menu saat resize ke desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        menu.style.display = "none";
+      }
+    });
+
+    // Tampilkan nama pengguna
+    const nama = localStorage.getItem("namaPengguna") || "Pengguna";
+    document.getElementById("displayNamaPengguna").innerText = nama;
+  });
+</script>
+
 </body>
 </html>
