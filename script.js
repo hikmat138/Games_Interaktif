@@ -1,81 +1,96 @@
-// Popup Profil Modal
-window.addEventListener("load", function() {
-    if (!localStorage.getItem("hkmtPopupShown")) {
-      setTimeout(() => {
-        document.getElementById("popup-profil").style.display = "flex";
-        localStorage.setItem("hkmtPopupShown", "true");
-      }, 1000);
-    }
-  });
-  
-  window.addEventListener("DOMContentLoaded", () => {
-    document.querySelector(".btn-profil")?.addEventListener("click", () => {
+// === POPUP PROFIL ===
+window.addEventListener("load", function () {
+  if (!localStorage.getItem("hkmtPopupShown")) {
+    setTimeout(() => {
       document.getElementById("popup-profil").style.display = "flex";
-    });
-  
-    document.getElementById("popup-close")?.addEventListener("click", () => {
-      document.getElementById("popup-profil").style.display = "none";
-    });
-  });
-  
-  
-   
-  
-  document.querySelector(".btn-information").onclick = () => {
-    alert("Ini adalah media pembelajaran interaktif untuk siswa kelas 5 SD");
-  };
-  
- const musik = new Audio('media/musik.mp3');
-musik.loop = true;
-
-// Ambil status musik (play/pause) dari localStorage
-const paused = localStorage.getItem('musikPaused') === 'true';
-const lastTime = parseFloat(localStorage.getItem('musikTime')) || 0;
-
-musik.currentTime = lastTime; // lanjut dari waktu terakhir
-
-if (!paused) {
-  musik.play();
-}
-
-// Tombol Play
-document.querySelector('.btn-play')?.addEventListener('click', () => {
-  musik.play();
-  localStorage.setItem('musikPaused', 'false');
-});
-
-// Tombol Mute
-document.querySelector('.btn-mute')?.addEventListener('click', () => {
-  musik.pause();
-  localStorage.setItem('musikPaused', 'true');
-});
-
-// Update posisi waktu setiap detik ke localStorage
-setInterval(() => {
-  if (!musik.paused) {
-    localStorage.setItem('musikTime', musik.currentTime.toString());
+      localStorage.setItem("hkmtPopupShown", "true");
+    }, 1000);
   }
-}, 1000);
+});
 
-/// Arahkan ke halaman numerasi saat tombol diklik
-  const numerasiButton = document.querySelector(".btn-numerasi");
-  numerasiButton?.addEventListener("click", () => {
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".btn-profil")?.addEventListener("click", () => {
+    document.getElementById("popup-profil").style.display = "flex";
+  });
+
+  document.getElementById("popup-close")?.addEventListener("click", () => {
+    document.getElementById("popup-profil").style.display = "none";
+  });
+
+  document.querySelector(".btn-information")?.addEventListener("click", () => {
+    alert("Ini adalah media pembelajaran interaktif untuk siswa kelas 5 SD");
+  });
+
+  // Musik
+  const musik = new Audio('media/musik.mp3');
+  musik.loop = true;
+
+  const paused = localStorage.getItem('musikPaused') === 'true';
+  const lastTime = parseFloat(localStorage.getItem('musikTime')) || 0;
+  musik.currentTime = lastTime;
+
+  if (!paused) musik.play();
+
+  document.querySelector('.btn-play')?.addEventListener('click', () => {
+    musik.play();
+    localStorage.setItem('musikPaused', 'false');
+  });
+
+  document.querySelector('.btn-mute')?.addEventListener('click', () => {
+    musik.pause();
+    localStorage.setItem('musikPaused', 'true');
+  });
+
+  setInterval(() => {
+    if (!musik.paused) {
+      localStorage.setItem('musikTime', musik.currentTime.toString());
+    }
+  }, 1000);
+
+  // Navigasi Halaman
+  document.querySelector(".btn-numerasi")?.addEventListener("click", () => {
     window.location.href = "numerasi.html";
   });
-  
-/// Arahkan ke halaman literasi saat tombol diklik
-  const literasiButton = document.querySelector(".btn-literasi");
-  literasiButton?.addEventListener("click", () => {
+
+  document.querySelector(".btn-literasi")?.addEventListener("click", () => {
     window.location.href = "literasi.html";
   });
-  document.getElementById("reset-nama-btn")?.addEventListener("click", () => {
-  if (confirm("Yakin ingin mengganti nama pengguna?")) {
-    localStorage.removeItem("nama_pengguna");
-    location.reload(); // agar prompt nama muncul lagi
-  }
-});
-document.getElementById('hamburger-toggle').addEventListener('click', function () {
-  const menu = document.getElementById('dropdown-menu');
-  menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-});
 
+  document.getElementById("reset-nama-btn")?.addEventListener("click", () => {
+    if (confirm("Yakin ingin mengganti nama pengguna?")) {
+      localStorage.removeItem("nama_pengguna");
+      location.reload();
+    }
+  });
+
+  document.getElementById("reset-nama-btn-mobile")?.addEventListener("click", () => {
+    if (confirm("Yakin ingin mengganti nama pengguna?")) {
+      localStorage.removeItem("nama_pengguna");
+      location.reload();
+    }
+  });
+
+  // === HAMBURGER MENU ===
+  const hamburger = document.getElementById('hamburger');
+  const dropdownMenu = document.getElementById('dropdown-menu');
+
+  hamburger?.addEventListener('click', () => {
+    const isVisible = dropdownMenu.style.display === 'flex';
+    dropdownMenu.style.display = isVisible ? 'none' : 'flex';
+  });
+
+  // Tutup menu saat salah satu item di dropdown diklik
+  const dropdownItems = dropdownMenu.querySelectorAll('img, button');
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', () => {
+      dropdownMenu.style.display = 'none';
+    });
+  });
+
+  // Tutup dropdown menu saat resize ke desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      dropdownMenu.style.display = "none";
+    }
+  });
+});
