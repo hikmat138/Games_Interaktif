@@ -11,7 +11,9 @@
 </head>
 <body>
   <!-- Tombol Navigasi Kanan -->
- 
+  <div class="nav-kanan">
+    <button id="btn-profil" title="Lihat Profil">Profil Pembuat</button>
+  </div>
 
   <!-- Container Utama -->
   <div class="container">
@@ -31,10 +33,10 @@
   </div>
 
   <!-- Popup Profil Pembuat -->
-  <div id="popup-profil">
+  <div id="popup-profil" class="popup-overlay" style="display: none;">
     <div class="popup-content">
       <img src="media/profil.png" alt="Foto Profil">
-      <p> PROFIL PEMBUAT </p>
+      <p><strong>PROFIL PEMBUAT</strong></p>
       <p><strong>Nama:</strong> Hikmatullah, S.Pd</p>
       <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
       <p><strong>Jabatan:</strong> Guru Kelas</p>
@@ -46,8 +48,8 @@
   <div id="popup-nama" class="popup-overlay">
     <div class="popup-content">
       <h3>Selamat datang!</h3>
-      <p>Silakan masukkan nama kamu:</p>
-      <input type="text" id="input-nama" placeholder="Nama lengkap" autocomplete="off" />
+      <p>Silakan masukkan nama murid:</p>
+      <input type="text" id="input-nama" placeholder="Nama lengkap murid" autocomplete="off" />
       <button id="btn-simpan-nama">Mulai</button>
     </div>
   </div>
