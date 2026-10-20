@@ -307,3 +307,38 @@
 .btn-reset-nama:hover {
   background-color: #e0a800;
 }
+.footer-pembuat {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 8px 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.footer-pembuat p {
+  margin: 0 0 4px 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
