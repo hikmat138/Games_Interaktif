@@ -7,8 +7,9 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('media/wood.gif') no-repeat center center fixed;
-  background-size: cover;
+  /* Menggunakan latar belakang gradasi warna modern yang ceria dan elegan tanpa gambar */
+  background: linear-gradient(135deg, #1e1b4b, #312e81, #4338ca);
+  background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,24 +24,23 @@ body {
   align-items: center;
   padding: 15px 30px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .school-brand {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   padding: 6px 14px;
   border-radius: 20px;
   font-weight: 600;
   font-size: 14px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 }
 
 .brand-dot {
@@ -48,7 +48,7 @@ body {
   height: 8px;
   background-color: #4ade80;
   border-radius: 50%;
-  box-shadow: 0 0 8px #4ade80;
+  box-shadow: 0 0 10px #4ade80;
 }
 
 .nav-controls {
@@ -58,27 +58,27 @@ body {
 }
 
 .btn-action-ghost {
-  background: #ffc107;
-  color: #1a202c;
+  background: #f59e0b;
+  color: #ffffff;
   border: none;
   padding: 8px 14px;
   border-radius: 10px;
   font-weight: 600;
   font-size: 13px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
   transition: transform 0.2s, background 0.2s;
 }
 
 .btn-action-ghost:hover {
-  background: #e0a800;
+  background: #d97706;
   transform: translateY(-2px);
 }
 
 /* Tombol Ikon Navigasi */
 .nav-icon-btn {
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   width: 42px;
   height: 42px;
@@ -86,25 +86,22 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  font-size: 18px;
+  color: white;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.2s, background 0.2s;
 }
 
 .nav-icon-btn:hover {
   transform: scale(1.1);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .nav-icon-btn img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
-
-.nav-icon-btn.btn-profil img {
   width: 28px;
   height: 28px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 /* KONTEN UTAMA */
@@ -114,8 +111,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 20px;
-  gap: 25px;
+  padding: 40px 20px;
+  gap: 30px;
   text-align: center;
 }
 
@@ -123,102 +120,102 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .badge-tag {
-  background: rgba(255, 255, 255, 0.25);
-  padding: 5px 14px;
+  background: rgba(99, 102, 241, 0.3);
+  color: #a5b4fc;
+  padding: 6px 16px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(99, 102, 241, 0.4);
 }
 
 .main-title {
   font-family: 'Chewy', cursive;
-  font-size: 52px;
+  font-size: 56px;
   color: #ffffff;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 4px 20px rgba(99, 102, 241, 0.5);
   letter-spacing: 1px;
 }
 
 .main-subtitle {
-  font-size: 15px;
-  color: #f1f5f9;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  color: #cbd5e1;
 }
 
 .section-instruction {
   font-family: 'Chewy', cursive;
-  font-size: 26px;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-  margin-bottom: 15px;
+  font-size: 28px;
+  color: #fbbf24;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
 }
 
-/* KARTU MENU GAME */
+/* KARTU MENU GAME BERBASIS CSS */
 .menu-grid {
   display: flex;
   justify-content: center;
 }
 
 .game-card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border: 4px solid #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 24px;
-  padding: 20px;
+  padding: 30px;
   width: 280px;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .game-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-  background: #ffffff;
+  border-color: #6366f1;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px rgba(99, 102, 241, 0.3);
 }
 
-.card-img-box {
-  width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-
-.card-img-box img {
-  width: 100%;
-  height: auto;
-  display: block;
+.card-icon-shape {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
   transition: transform 0.3s ease;
 }
 
-.game-card:hover .card-img-box img {
-  transform: scale(1.06);
+.game-card:hover .card-icon-shape {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .card-label {
   font-family: 'Chewy', cursive;
-  font-size: 32px;
-  color: #1e293b;
-  margin-bottom: 8px;
+  font-size: 30px;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .play-pill {
   display: inline-block;
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  background: linear-gradient(135deg, #10b981, #059669);
   color: white;
-  padding: 6px 16px;
+  padding: 8px 18px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
 }
 
 /* POPUP / MODAL UTAMA */
@@ -229,8 +226,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(6px);
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -241,113 +238,112 @@ body {
 }
 
 .custom-modal {
-  background: #ffffff;
-  color: #1e293b;
-  padding: 30px;
-  border-radius: 24px;
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 35px;
+  border-radius: 28px;
   width: 90%;
-  max-width: 380px;
+  max-width: 400px;
   text-align: center;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.4);
-  border: 4px solid #f1f5f9;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.modal-avatar {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 15px auto;
+.modal-avatar-shape {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #4f46e5;
-  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
-}
-
-.modal-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  margin: 0 auto 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
 }
 
 .modal-title {
   font-family: 'Chewy', cursive;
-  font-size: 28px;
-  color: #4f46e5;
-  margin-bottom: 12px;
+  font-size: 30px;
+  color: #38bdf8;
+  margin-bottom: 15px;
 }
 
 .modal-info-box {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 16px;
   text-align: left;
   margin-bottom: 20px;
 }
 
 .modal-info-box p {
-  font-size: 13px;
-  color: #475569;
-  margin: 5px 0;
+  font-size: 14px;
+  color: #cbd5e1;
+  margin: 6px 0;
 }
 
 .modal-emoji {
-  font-size: 40px;
-  margin-bottom: 8px;
+  font-size: 45px;
+  margin-bottom: 10px;
 }
 
 .modal-title-sm {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 6px;
+  color: #ffffff;
+  margin-bottom: 8px;
 }
 
 .modal-desc {
-  font-size: 13px;
-  color: #64748b;
-  margin-bottom: 15px;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 20px;
 }
 
 .custom-modal input {
   width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #cbd5e1;
-  border-radius: 12px;
-  font-size: 14px;
+  padding: 14px 18px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  font-size: 15px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   outline: none;
-  background: #f8fafc;
-  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  margin-bottom: 20px;
   transition: border-color 0.2s;
 }
 
 .custom-modal input:focus {
-  border-color: #4f46e5;
-  background: #fff;
-  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
 }
 
 .modal-btn-primary,
 .modal-btn-success {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
   color: white;
   transition: transform 0.2s, opacity 0.2s;
 }
 
 .modal-btn-primary {
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
 .modal-btn-success {
-  background: #22c55e;
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
 }
 
 .modal-btn-primary:hover,
@@ -362,29 +358,29 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  padding: 8px 15px;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 10px 15px;
   text-align: center;
   font-size: 12px;
-  color: #334155;
-  box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 90;
 }
 
 .app-footer p {
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer-links a {
-  color: #0284c7;
+  color: #38bdf8;
   text-decoration: none;
   font-weight: 600;
 }
@@ -394,7 +390,7 @@ body {
 }
 
 .dot-sep {
-  color: #94a3b8;
+  color: #475569;
 }
 
 /* ANIMASI */
