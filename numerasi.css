@@ -362,7 +362,22 @@ footer {
     padding: 16px;
   }
 }
+.petunjuk-social-box {
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+}
 
+.follow-callout-petunjuk {
+  font-size: 13px;
+  color: #d97706;
+  text-align: center;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
 @media (max-width: 480px) {
   .level-buttons {
     grid-template-columns: 1fr;
@@ -379,12 +394,4 @@ footer {
     opacity: 1;
     transform: scale(1);
   }
-}
-.follow-callout {
-  font-size: 12px;
-  color: #fbbf24;
-  text-align: center;
-  margin-top: 14px;
-  margin-bottom: 6px;
-  font-weight: 500;
 }
