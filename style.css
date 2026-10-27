@@ -421,3 +421,28 @@ body {
     transform: scale(1);
   }
 }
+/* Styling tautan sosmed di dalam modal profil */
+.modal-social-links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-social-links a {
+  background: rgba(255, 255, 255, 0.08);
+  color: #38bdf8;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.modal-social-links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: underline;
+}
