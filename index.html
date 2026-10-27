@@ -31,20 +31,21 @@
         ✏️ Ganti Nama
       </button>
       
+      <!-- Tetap menggunakan media/saya.png sesuai permintaan -->
       <button class="nav-icon-btn btn-profil" data-menu="profil" title="Profil Pembuat">
         <img src="media/saya.png" alt="Profil">
       </button>
 
       <button class="nav-icon-btn btn-play" data-menu="play" title="Putar Musik">
-        <img src="media/play.png" alt="Play">
+        🎵
       </button>
 
       <button class="nav-icon-btn btn-mute" data-menu="mute" title="Matikan Suara">
-        <img src="media/mute.png" alt="Mute">
+        🔇
       </button>
 
       <button class="nav-icon-btn btn-information" data-menu="information" title="Informasi Game">
-        <img src="media/information.png" alt="Info">
+        ℹ️
       </button>
     </div>
   </header>
@@ -60,9 +61,10 @@
     <section class="menu-section">
       <p class="section-instruction">Silakan pilih game di bawah ini:</p>
       <div class="menu-grid">
+        <!-- Game Card berbasis CSS murni tanpa gambar PNG -->
         <div class="game-card btn-numerasi" data-menu="numerasi">
-          <div class="card-img-box">
-            <img src="media/matematika.png" alt="Game Numerasi">
+          <div class="card-icon-shape">
+            <span>✖️➗</span>
           </div>
           <div class="card-footer-info">
             <h3 class="card-label">Game Numerasi</h3>
@@ -76,8 +78,8 @@
   <!-- Popup Profil Pembuat (Otomatis muncul di awal dengan class 'active') -->
   <div id="popup-profil" class="custom-overlay active">
     <div class="custom-modal">
-      <div class="modal-avatar">
-        <img src="media/profil.png" alt="Foto Profil Pengembang">
+      <div class="modal-avatar-shape">
+        👨‍🏫
       </div>
       <h3 class="modal-title">PROFIL PEMBUAT</h3>
       <div class="modal-info-box">
