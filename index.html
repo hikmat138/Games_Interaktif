@@ -3,75 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Interaktif SD</title>
+  <title>Media Perkalian - SDN Ranca Tales</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
   <script defer src="script.js"></script>
   <script defer src="nama_pengguna.js"></script>
 </head>
 <body>
-  <!-- Tombol Navigasi Kanan -->
-  <div class="top-bar">
-    <div class="top-right-buttons" id="nav-buttons">
-      <button id="reset-nama-btn" class="btn-reset-nama">Ganti Nama Pengguna</button>
-      <img src="media/saya.png" alt="profil" class="btn-profil" data-menu="profil" width="50px">
-      <img src="media/play.png" alt="play" class="btn-play" data-menu="play" width="45px">
-      <img src="media/mute.png" alt="mute" class="btn-mute" data-menu="mute" width="50px">
-      <img src="media/information.png" alt="information" class="btn-information" data-menu="information" width="50px">
+
+  <!-- Top Navigation Bar -->
+  <header class="top-bar">
+    <div class="brand-title">
+      <span>SDN Ranca Tales</span>
     </div>
-  </div>
+    <div class="top-right-buttons" id="nav-buttons">
+      <button id="reset-nama-btn" class="btn-reset-nama">Ganti Nama</button>
+      <button class="nav-icon-btn btn-profil" data-menu="profil" title="Profil Pembuat">
+        <img src="media/saya.png" alt="profil" width="36px">
+      </button>
+      <button class="nav-icon-btn btn-play" data-menu="play" title="Putar Musik">
+        <img src="media/play.png" alt="play" width="32px">
+      </button>
+      <button class="nav-icon-btn btn-mute" data-menu="mute" title="Matikan Suara">
+        <img src="media/mute.png" alt="mute" width="36px">
+      </button>
+      <button class="nav-icon-btn btn-information" data-menu="information" title="Informasi">
+        <img src="media/information.png" alt="information" width="36px">
+      </button>
+    </div>
+  </header>
 
   <!-- Container Utama -->
-  <div class="container">
-    <div class="judul-utama">
-      <h1>Media Perkalian</h1>
+  <main class="container">
+    <div class="hero-section">
+      <h1 class="judul-utama">Media Perkalian</h1>
+      <p class="sub-judul">Asyik, Seru, dan Mudah Belajar Matematika!</p>
     </div>
 
     <div class="menu-wrapper">
       <p class="judul-game">Silakan pilih game:</p>
       <div class="menu-horizontal">
-        <div class="menu-item">
-          <img src="media/matematika.png" alt="Game Numerasi" class="btn-numerasi" data-menu="numerasi">
+        <div class="menu-item btn-numerasi" data-menu="numerasi">
+          <div class="menu-item-icon">
+            <img src="media/matematika.png" alt="Game Numerasi">
+          </div>
           <p class="label">Game Numerasi</p>
+          <span class="play-badge">Mainkan 🚀</span>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
-  <!-- Popup Profil Pembuat -->
-  <div id="popup-profil">
-    <div class="popup-content">
-      <img src="media/profil.png" alt="Foto Profil">
-      <p> PROFIL PEMBUAT </p>
-      <p><strong>Nama:</strong> Hikmatullah, S.Pd</p>
-      <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
-      <p><strong>Jabatan:</strong> Guru Kelas</p>
-      <button id="popup-close">Tutup</button>
+  <!-- Popup Profil Pembuat (Diberi class 'active' agar langsung muncul di awal) -->
+  <div id="popup-profil" class="popup-overlay active">
+    <div class="popup-content modern-popup">
+      <div class="popup-avatar-container">
+        <img src="media/profil.png" alt="Foto Profil Pengembang">
+      </div>
+      <h3 class="popup-title">PROFIL PEMBUAT</h3>
+      <div class="profile-info-box">
+        <p><strong>Nama:</strong> Hikmatullah, S.Pd</p>
+        <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
+        <p><strong>Jabatan:</strong> Guru Kelas</p>
+      </div>
+      <button id="popup-close" class="btn-action-primary">Tutup & Mulai</button>
     </div>
   </div>
 
   <!-- Popup Input Nama Pengguna -->
   <div id="popup-nama" class="popup-overlay">
-    <div class="popup-content">
-      <h3>Selamat datang!</h3>
-      <p>Silakan masukkan nama kamu:</p>
-      <input type="text" id="input-nama" placeholder="Nama lengkap" autocomplete="off" />
-      <button id="btn-simpan-nama">Mulai</button>
+    <div class="popup-content modern-popup">
+      <div class="welcome-icon">👋</div>
+      <h3>Selamat Datang!</h3>
+      <p>Silakan masukkan nama lengkap kamu:</p>
+      <input type="text" id="input-nama" placeholder="Contoh: Budi Santoso" autocomplete="off" />
+      <button id="btn-simpan-nama" class="btn-action-success">Mulai Belajar</button>
     </div>
   </div>
 
   <!-- Footer Media Sosial Pembuat -->
   <footer class="footer-pembuat">
-    <p>Dibuat oleh: <strong>Hikmatullah, S.Pd</strong></p>
+    <p>Dibuat oleh: <strong>Hikmatullah, S.Pd</strong> (SDN Ranca Tales)</p>
     <div class="social-links">
       <a href="https://instagram.com/hikmat_tullah12" target="_blank" rel="noopener noreferrer">
         📷 Instagram: @hikmat_tullah12
       </a>
-      <span>|</span>
+      <span class="separator">|</span>
       <a href="https://tiktok.com/@pa.hikm12" target="_blank" rel="noopener noreferrer">
         🎵 TikTok: @pa.hikm12
       </a>
     </div>
   </footer>
+
 </body>
 </html>
