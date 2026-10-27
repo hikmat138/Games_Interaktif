@@ -19,20 +19,14 @@
 </head>
 <body>
 
-  <!-- Top Navigation Bar Modern -->
+  <!-- Top Navigation Bar (Bersih hanya berisi Brand & Tombol Kontrol) -->
   <header class="app-header">
-    <div class="header-left">
-      <div class="school-badge-pill">
-        <span class="live-dot"></span>
-        <span>SDN Ranca Tales</span>
-      </div>
-      <!-- Label Nama Murid yang di-generate dari nama_pengguna.js -->
-      <div id="user-display-badge" class="user-badge">
-        👤 <span id="nama-user-label">Murid</span>
-      </div>
+    <div class="school-brand-pill">
+      <span class="live-dot"></span>
+      <span>SDN Ranca Tales</span>
     </div>
     
-    <div class="header-right">
+    <div class="header-controls">
       <button id="reset-nama-btn" class="btn-pill-action" title="Ganti Nama Pengguna">
         ✏️ Ganti Nama
       </button>
@@ -61,6 +55,11 @@
       <div class="top-tagline">✨ Media Pembelajaran Interaktif Kurikulum Merdeka</div>
       <h1 class="main-app-title">Media Perkalian</h1>
       <p class="main-app-subtitle">Asyik, Seru, dan Mudah Belajar Matematika untuk murid!</p>
+      
+      <!-- Tempat Nama Pengguna yang di-generate dari nama_pengguna.js diposisikan di sini agar rapi -->
+      <div id="user-display-badge" class="user-greeting-card">
+        👋 Halo, <span id="nama-user-label">Murid</span>!
+      </div>
     </div>
 
     <section class="game-selection-area">
