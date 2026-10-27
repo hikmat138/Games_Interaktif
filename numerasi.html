@@ -70,8 +70,8 @@
     </div>
   </main>
 
-  <!-- POPUP PROFIL PEMBUAT -->
-  <div id="popup-profil" class="custom-modal-overlay">
+  <!-- POPUP PROFIL PEMBUAT (Diberi class 'active' agar langsung muncul di awal) -->
+  <div id="popup-profil" class="custom-modal-overlay active">
     <div class="custom-modal-box">
       <div class="modal-avatar-circle">
         <img src="media/saya.png" alt="Foto Profil Pengembang">
@@ -82,7 +82,8 @@
         <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
         <p><strong>Jabatan:</strong> Guru Kelas</p>
         
-        <!-- Tautan Sosial Media -->
+        <!-- Pesan ajakan follow yang manis & Tautan Sosial Media -->
+        <p class="follow-callout">Jangan lupa follow IG & TikTok pembuatnya ya! 👇</p>
         <div class="modal-social-links">
           <a href="https://instagram.com/hikmat_tullah12" target="_blank" rel="noopener noreferrer">
             📷 @hikmat_tullah12
@@ -92,15 +93,21 @@
           </a>
         </div>
       </div>
-      <button id="popup-close" class="modal-main-btn">Tutup</button>
+      <button id="popup-close" class="modal-main-btn">Tutup & Mulai</button>
     </div>
   </div>
 
-  <!-- Skrip Pengalih Petunjuk -->
+  <!-- Skrip Pengalih Petunjuk & Popup -->
   <script>
     document.getElementById('btn-tutup-petunjuk').addEventListener('click', () => {
       document.getElementById('petunjuk-container').style.display = 'none';
       document.getElementById('menu-level').style.display = 'flex';
+    });
+
+    // Tombol tutup modal profil
+    document.getElementById('popup-close').addEventListener('click', () => {
+      document.getElementById('popup-profil').classList.remove('active');
+      document.getElementById('popup-profil').style.display = 'none';
     });
   </script>
 </body>
