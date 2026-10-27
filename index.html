@@ -19,56 +19,60 @@
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- Top Navigation Bar Modern -->
   <header class="app-header">
-    <div class="school-brand">
-      <span class="brand-dot"></span>
-      <span>SDN Ranca Tales</span>
+    <div class="header-left">
+      <div class="school-badge-pill">
+        <span class="live-dot"></span>
+        <span>SDN Ranca Tales</span>
+      </div>
+      <!-- Label Nama Murid yang di-generate dari nama_pengguna.js -->
+      <div id="user-display-badge" class="user-badge">
+        👤 <span id="nama-user-label">Murid</span>
+      </div>
     </div>
     
-    <div class="nav-controls">
-      <button id="reset-nama-btn" class="btn-action-ghost" title="Ganti Nama Pengguna">
+    <div class="header-right">
+      <button id="reset-nama-btn" class="btn-pill-action" title="Ganti Nama Pengguna">
         ✏️ Ganti Nama
       </button>
       
-      <!-- Tetap menggunakan media/saya.png sesuai permintaan -->
-      <button class="nav-icon-btn btn-profil" data-menu="profil" title="Profil Pembuat">
+      <button class="icon-nav-btn btn-profil" data-menu="profil" title="Profil Pembuat">
         <img src="media/saya.png" alt="Profil">
       </button>
 
-      <button class="nav-icon-btn btn-play" data-menu="play" title="Putar Musik">
+      <button class="icon-nav-btn btn-play" data-menu="play" title="Putar Musik">
         🎵
       </button>
 
-      <button class="nav-icon-btn btn-mute" data-menu="mute" title="Matikan Suara">
+      <button class="icon-nav-btn btn-mute" data-menu="mute" title="Matikan Suara">
         🔇
       </button>
 
-      <button class="nav-icon-btn btn-information" data-menu="information" title="Informasi Game">
+      <button class="icon-nav-btn btn-information" data-menu="information" title="Informasi Game">
         ℹ️
       </button>
     </div>
   </header>
 
   <!-- Container Utama -->
-  <main class="main-container">
-    <div class="hero-content">
-      <span class="badge-tag">✨ Media Pembelajaran Interaktif</span>
-      <h1 class="main-title">Media Perkalian</h1>
-      <p class="main-subtitle">Asyik, Seru, dan Mudah Belajar Matematika untuk Murid!</p>
+  <main class="main-hero-container">
+    <div class="hero-content-box">
+      <div class="top-tagline">✨ Media Pembelajaran Interaktif Kurikulum Merdeka</div>
+      <h1 class="main-app-title">Media Perkalian</h1>
+      <p class="main-app-subtitle">Asyik, Seru, dan Mudah Belajar Matematika untuk murid!</p>
     </div>
 
-    <section class="menu-section">
-      <p class="section-instruction">Silakan pilih game di bawah ini:</p>
-      <div class="menu-grid">
-        <!-- Game Card berbasis CSS murni tanpa gambar PNG -->
-        <div class="game-card btn-numerasi" data-menu="numerasi">
-          <div class="card-icon-shape">
+    <section class="game-selection-area">
+      <h2 class="section-title-custom">Silakan pilih game di bawah ini:</h2>
+      <div class="cards-wrapper">
+        <div class="modern-game-card btn-numerasi" data-menu="numerasi">
+          <div class="card-icon-wrapper">
             <span>✖️➗</span>
           </div>
-          <div class="card-footer-info">
-            <h3 class="card-label">Game Numerasi</h3>
-            <span class="play-pill">Mainkan Sekarang 🚀</span>
+          <div class="card-info-content">
+            <h3>Game Numerasi</h3>
+            <span class="play-badge-btn">Mainkan Sekarang 🚀</span>
           </div>
         </div>
       </div>
@@ -76,40 +80,40 @@
   </main>
 
   <!-- Popup Profil Pembuat (Otomatis muncul di awal dengan class 'active') -->
-  <div id="popup-profil" class="custom-overlay active">
-    <div class="custom-modal">
-      <div class="modal-avatar-shape">
+  <div id="popup-profil" class="custom-modal-overlay active">
+    <div class="custom-modal-box">
+      <div class="modal-avatar-circle">
         👨‍🏫
       </div>
-      <h3 class="modal-title">PROFIL PEMBUAT</h3>
-      <div class="modal-info-box">
+      <h3 class="modal-heading">PROFIL PEMBUAT</h3>
+      <div class="modal-info-card">
         <p><strong>Nama:</strong> Hikmatullah, S.Pd</p>
         <p><strong>Sekolah:</strong> SDN Ranca Tales</p>
         <p><strong>Jabatan:</strong> Guru Kelas</p>
       </div>
-      <button id="popup-close" class="modal-btn-primary">Tutup & Mulai Belajar</button>
+      <button id="popup-close" class="modal-main-btn">Tutup & Mulai Belajar</button>
     </div>
   </div>
 
   <!-- Popup Input Nama Pengguna -->
-  <div id="popup-nama" class="custom-overlay">
-    <div class="custom-modal">
-      <div class="modal-emoji">👋</div>
-      <h3 class="modal-title-sm">Selamat Datang!</h3>
-      <p class="modal-desc">Silakan masukkan nama lengkap kamu:</p>
+  <div id="popup-nama" class="custom-modal-overlay">
+    <div class="custom-modal-box">
+      <div class="modal-emoji-icon">👋</div>
+      <h3 class="modal-heading-sm">Selamat Datang!</h3>
+      <p class="modal-desc-text">Silakan masukkan nama lengkap kamu:</p>
       <input type="text" id="input-nama" placeholder="Contoh: Budi Santoso" autocomplete="off" />
-      <button id="btn-simpan-nama" class="modal-btn-success">Mulai Belajar</button>
+      <button id="btn-simpan-nama" class="modal-success-btn">Mulai Belajar</button>
     </div>
   </div>
 
   <!-- Footer Pembuat -->
-  <footer class="app-footer">
+  <footer class="app-footer-bar">
     <p>Dibuat oleh: <strong>Hikmatullah, S.Pd</strong> (SDN Ranca Tales)</p>
-    <div class="footer-links">
+    <div class="footer-social-links">
       <a href="https://instagram.com/hikmat_tullah12" target="_blank" rel="noopener noreferrer">
         📷 Instagram: @hikmat_tullah12
       </a>
-      <span class="dot-sep">•</span>
+      <span class="separator-dot">•</span>
       <a href="https://tiktok.com/@pa.hikm12" target="_blank" rel="noopener noreferrer">
         🎵 TikTok: @pa.hikm12
       </a>
