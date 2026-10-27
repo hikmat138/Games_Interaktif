@@ -380,3 +380,11 @@ footer {
     transform: scale(1);
   }
 }
+.follow-callout {
+  font-size: 12px;
+  color: #fbbf24;
+  text-align: center;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
